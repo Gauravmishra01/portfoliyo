@@ -498,6 +498,13 @@ body.dark-mode .hamburger div {
   }
 }
 
+.about-video {
+  max-width: 100%;
+  height: auto;
+  display: block; /* removes default inline gap */
+  border-radius: 8px; /* or match your previous styling */
+}
+
 /* Education & Experience Sections */
 .timeline {
   position: relative;
