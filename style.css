@@ -459,6 +459,45 @@ body.dark-mode .hamburger div {
   transition: width 1.5s ease;
 }
 
+/* Resume Button Styles */
+.resume-button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.resume-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.resume-button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(253, 121, 168, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .resume-button-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .resume-button {
+    justify-content: center;
+  }
+}
+
 /* Education & Experience Sections */
 .timeline {
   position: relative;
