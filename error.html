@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="error-message">
+      <h1>Error Sending Message</h1>
+      <p id="error-detail">Please try again later or contact me directly.</p>
+      <a href="index.html" class="cta-button">← Back to Portfolio</a>
+    </div>
+    <script>
+      // Show specific error if available
+      const errorReason = new URLSearchParams(window.location.search).get(
+        "reason"
+      );
+      if (errorReason === "invalid_email") {
+        document.getElementById("error-detail").textContent =
+          "Please provide a valid email address.";
+      } else if (errorReason === "send_failed") {
+        document.getElementById("error-detail").textContent =
+          "Our email server is currently unavailable. Please email me directly at gauravmishra92812@gmail.com";
+      } else if (errorReason === "empty_fields") {
+        document.getElementById("error-detail").textContent =
+          "Please fill in all required fields.";
+      }
+    </script>
+  </body>
+</html>
