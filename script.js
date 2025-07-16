@@ -175,6 +175,41 @@ filterButtons.forEach((button) => {
   });
 });
 
+// Hotel Gallery Interactions
+document.addEventListener("DOMContentLoaded", function () {
+  // Save button functionality
+  const saveButtons = document.querySelectorAll(".save-btn, .hotel-save-btn");
+
+  saveButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      this.innerHTML = '<i class="fas fa-check"></i> Saved';
+      this.style.backgroundColor = "#2ed573";
+
+      setTimeout(() => {
+        this.innerHTML = '<i class="far fa-bookmark"></i> Save';
+        this.style.backgroundColor = "#ff4757";
+      }, 2000);
+    });
+  });
+
+  // View button functionality
+  const viewButtons = document.querySelectorAll(".view-btn");
+  viewButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Replace with actual view functionality
+      alert("Opening hotel details...");
+    });
+  });
+
+  // Profile button functionality
+  const profileButtons = document.querySelectorAll(".profile-btn");
+  profileButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Replace with actual profile functionality
+      alert("Opening profile...");
+    });
+  });
+});
 // Testimonial Slider
 const testimonialSlides = document.querySelectorAll(".testimonial-slide");
 const sliderDots = document.querySelectorAll(".slider-dot");
