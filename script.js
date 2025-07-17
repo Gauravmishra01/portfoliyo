@@ -175,7 +175,49 @@ filterButtons.forEach((button) => {
   });
 });
 
-// do it here/.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+// Masonry Gallery Initialization
+function initMasonryGallery() {
+  const grid = document.querySelector(".masonry-grid");
+  const items = document.querySelectorAll(".masonry-item");
+
+  if (!grid) return;
+
+  // Calculate row spans based on image aspect ratios
+  items.forEach((item) => {
+    const img = item.querySelector("img");
+    if (img.complete) {
+      setMasonrySpan(item, img);
+    } else {
+      img.addEventListener("load", () => setMasonrySpan(item, img));
+    }
+  });
+
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      items.forEach((item) => {
+        const img = item.querySelector("img");
+        setMasonrySpan(item, img);
+      });
+    }, 250);
+  });
+}
+
+function setMasonrySpan(item, img) {
+  if (!img || !item) return;
+
+  const rowHeight = 10; // Should match grid-auto-rows in CSS
+  const rowGap = 15; // Should match gap in CSS
+  const rowSpan = Math.ceil((img.height + rowGap) / (rowHeight + rowGap));
+
+  item.style.gridRowEnd = `span ${rowSpan}`;
+}
+
+// Initialize when DOM is loaded
+document.addEventListener("DOMContentLoaded", initMasonryGallery);
+
 // Testimonial Slider
 const testimonialSlides = document.querySelectorAll(".testimonial-slide");
 const sliderDots = document.querySelectorAll(".slider-dot");
