@@ -1,7 +1,3 @@
-It appears that the repository at `https://github.com/Gauravmishra01/portfoliyo` either isn't publicly accessible or doesn't contain a README that I can fetch. To help you craft a proper README, I'll outline a templated README file. You can customize it with your repo's actual content (project name, description, features, technologies, etc.).
-
----
-
 ## 📘 `portfoliyo` - README Template
 
 ````markdown
