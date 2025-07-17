@@ -1,6 +1,3 @@
-## 📘 `portfoliyo` - README Template
-
-````markdown
 # Portfoliyo
 
 A personal portfolio website built to showcase my skills, experience, and projects.
